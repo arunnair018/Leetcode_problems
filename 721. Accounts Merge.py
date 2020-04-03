@@ -40,9 +40,10 @@ accounts = [["Alex","Alex5@m.co","Alex4@m.co","Alex0@m.co"],
             ["Gabe","Gabe0@m.co","Gabe3@m.co","Gabe2@m.co"],
             ["Gabe","Gabe3@m.co","Gabe4@m.co","Gabe2@m.co"]]
 
-
+# create graphs  according to account
 g = graph()
 names = {}
+# constructing graphs, may construct disconneted graph
 for acc in accounts:
     name = acc[0]
     email = acc[1:]
@@ -50,6 +51,8 @@ for acc in accounts:
     for mail in email[1:]:
         g._add(email[0],mail)
 
+# do a dfs and find the connected graphs 
+# and bundle them together.
 out=[]
 for i in names.keys():
     if i not in g.vertices:
