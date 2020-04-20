@@ -38,6 +38,8 @@ print(out)
 import re
 from collections import Counter
 parse = re.findall('([A-Z][a-z]*)(\d*)|(\()|(\))(\d*)',formula) 
+for i in parse:
+    print(i)
 stack = [Counter()]
 for name, m1, o, c, m2 in parse:
     if name:
